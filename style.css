@@ -91,6 +91,15 @@ nav{
     background-color: fuchsia;
     padding: 10px;
     border-radius: 20px;
+    cursor: pointer;
+    border:solid 1px fuchsia;
+}
+
+.catagories p:hover{
+    background-color: transparent;
+    transition: 1s;
+    color:black;
+    border:solid 1px fuchsia;
 }
 
 .sale-image img{
@@ -109,7 +118,23 @@ nav{
     padding: 10px;
     position: absolute;
     top: 10%;
-    left:10%
+    left:10%;
+    animation-name: zoom;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes zoom{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .recommended{
@@ -124,7 +149,9 @@ nav{
 }
 
 .image__code{
-    width: 300px;
+    flex-grow: 1;
+    flex-basis: 20%;
+    margin: 10px;
 }
 
 .image__code img{
@@ -188,4 +215,28 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+@media screen and (max-width:800px){
+    body{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .image__code{
+        flex-basis: 40%;
+    }
+
+    .catagories{
+        display: none;
+    }
+
+    .navbar__s2,.navbar__s3{
+        display: none;
+    }
+}
+
+.navbar__s4{
+        display: block;
 }
